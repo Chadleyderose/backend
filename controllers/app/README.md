@@ -4,7 +4,7 @@
 
 | Completed  | Uncompleted | Task                          | Branch - Name                                                                |
 | ---------- | ----------- | ----------------------------- | ---------------------------------------------------------------------------- |
-| :thumbsup: |             | Create Register Router        | [ChadH28](https://github.com/Shane-kolkoto/Mind-Body-Soul/tree/Chads-fruits) |
+| :thumbsup: |             | Create Register Router        | [ChadH28](https://github.com/chadleyderose/backend) |
 | :thumbsup: |             | Create Login Router           | [Login]()                                                                    |
 | :thumbsup: |             | Create Verify Router          | [Verify]()                                                                   |
 | :thumbsup: |             | Create Forgot-password Router | [Forgot-pw]()                                                                |
