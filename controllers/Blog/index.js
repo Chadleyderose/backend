@@ -13,6 +13,8 @@ app.get("/", (req, res) => {
     .getAllBlogs(req, res)
 })
 
+
+
 // Get product by :id from database
 app.get('/:id', function (req, res) {
   try {

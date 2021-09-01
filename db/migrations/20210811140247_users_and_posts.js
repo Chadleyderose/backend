@@ -5,7 +5,7 @@ exports.up = function (knex, Promise) {
 			table.string('name').notNullable();
 			table.string('surname').notNullable();
 			table.string('username').notNullable();
-			table.string('email').notNullable();
+			table.string('email').notNullable().unique();
 			table.string('password').notNullable();
 			table.timestamp('created_at').defaultTo(knex.fn.now());
 			table.timestamp('updated_at').defaultTo(knex.fn.now());
@@ -17,21 +17,20 @@ exports.up = function (knex, Promise) {
 				.notNullable()
 				.references('id')
 				.inTable('users')
-			table.string('post_id').notNullable().defaultTo('');
 			table.string('post_content').notNullable().defaultTo('');
+			table.integer('post_likes').defaultTo(0);
+			table.string('post_tags');
+			table.string('image')
 			table.timestamp('created_at').defaultTo(knex.fn.now());
 			table.timestamp('updated_at').defaultTo(knex.fn.now());
 		})
 
 		.createTable('users_comments', function (table) {
+			table.increments('id');
 			table.integer('user_id') 
 			.notNullable() 
 			.references('id') 
 			.inTable('users') 
-			table.integer('id') 
-			.notNullable() 
-			.references('id')
-			.inTable('users_posts')
 			table.string('comment_content').notNullable().defaultTo('');
 			table.timestamps(true, true);
 		})

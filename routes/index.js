@@ -7,6 +7,4 @@ const serverController = require('../controllers/Server');
 app.get('/', serverController);
 
 
-
-
 module.exports = app;

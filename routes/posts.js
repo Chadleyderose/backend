@@ -1,10 +1,10 @@
 const express = require('express');
 
 const app = express();
-const blogController = require('../controllers/Blog');
+const PostController = require('../controllers/Posts/posts');
 
 
-app.use('/', blogController);
+app.use('/', PostController);
 
 
 

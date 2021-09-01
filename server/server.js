@@ -15,8 +15,11 @@
   // Making errors a global variable
   const errorConfig = require('../serverHelpers/error-config.js');
 
+
+
   // *** express instance *** //
   const app = express();
+
 
   // *** config *** //
   appConfig.init(app, express);

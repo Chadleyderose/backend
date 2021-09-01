@@ -1,6 +1,10 @@
 const express = require('express');
 
+
 const server = express();
+
+server.set('trust proxy', 1) // trust first proxy
+ 
 
 
 server.use('/', (req, res) => {

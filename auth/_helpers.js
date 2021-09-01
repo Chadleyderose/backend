@@ -23,17 +23,16 @@ function createUser(req, res) {
       });
     })
     .catch((err) =>
-    console.log(err)
-      // res.status(400).json({
-      //   status: "error",
-      //   data: "user already in database",
-      // })
+      res.status(404).json({
+        status: "error",
+        data: "user already in database",
+      })
     );
 }
 
 function Login(req, res) {
   knex("users")
-    .where({ email: req.body.email })
+    .where({ username: req.body.username })
     .first()
     .then((users) => {
       if (!users) {
@@ -52,6 +51,7 @@ function Login(req, res) {
               });
             } else {
               return jwt.sign(users, SECRET, (error, token) => {
+                console.log(token)
                 res.cookie("jwt", token, {
                   secure: true,
                   httpOnly: true,

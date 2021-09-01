@@ -6,7 +6,4 @@ const appController = require('../controllers/app/index.js');
 
 app.use('/', appController);
 
-
-
-
 module.exports = app;

@@ -5,7 +5,7 @@ function getAllBlogs(req, res) {
   try {
     knex()
 				.select()
-				.from('posts')
+				.from('users_posts')
 				.then(function (post) {
           res.status(200).json({
               status: 'ok',
