@@ -32,7 +32,7 @@ function createUser(req, res) {
 
 function Login(req, res) {
   knex("users")
-    .where({ username: req.body.username })
+    .where({ email: req.body.email })
     .first()
     .then((users) => {
       if (!users) {
@@ -85,7 +85,6 @@ function ensureAuthenticated(req, res, next) {
           username: decodedToken.username,
           email: decodedToken.email,
           password: decodedToken.password,
-          job_title: decodedToken.job_title,
         },
       });
     }
