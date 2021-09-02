@@ -21,19 +21,23 @@ app.post("/:id", (req, res) => {
       knex('users_posts')
       .insert({
         user_id : user_id,
-        post_content: req.body.post_content,
+        post_title: req.body.post_content,
         post_likes: req.body.post_likes,
         post_tags: req.body.post_tags,
+        post_describtion: req.body.post_describtion,
         image: req.body.image
       })
       .select(["*"])
       .then((posts) => {
-          console.log(posts)
+        res.status(200).json({
+          status: 'ok',
+          data: posts
+        })
       })
     
     })
     .catch((error) => {
-      console.log(error)
+      // console.log(error)
     })
 })
 

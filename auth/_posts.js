@@ -3,9 +3,7 @@ const { v4 } = require("uuid");
 
 
 function getAllPosts(req, res) {
-    knex()
-				.select()
-				.from('users_posts')
+    knex('users_posts')
 				.then((posts) => {
           res.status(200).json({
             status: 'ok',

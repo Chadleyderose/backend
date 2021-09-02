@@ -17,9 +17,10 @@ exports.up = function (knex, Promise) {
 				.notNullable()
 				.references('id')
 				.inTable('users')
-			table.string('post_content').notNullable().defaultTo('');
+			table.string('post_title').notNullable().defaultTo('');
 			table.integer('post_likes').defaultTo(0);
 			table.string('post_tags');
+			table.string('post_describtion');-
 			table.string('image')
 			table.timestamp('created_at').defaultTo(knex.fn.now());
 			table.timestamp('updated_at').defaultTo(knex.fn.now());
